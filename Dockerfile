@@ -22,6 +22,7 @@ RUN apt-get -y -qq update > /dev/null
 RUN apt-get install -y -qq rabbitmq-server > /dev/null
 RUN echo "ulimit -n 102400" >> /etc/default/rabbitmq-server
 RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_management
+RUN /usr/sbin/rabbitmq-plugins enable rabbitmq_web_stomp
 
 EXPOSE 5672 15672
 
